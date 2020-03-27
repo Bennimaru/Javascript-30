@@ -79,6 +79,13 @@
 				const secondsDegrees = (seconds / 60) * 360 + 90;
 				secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
+				if (seconds == 0) {
+					secondHand.style.transition = "none";
+				} else {
+					secondHand.style.transition = "";
+				}
+				// removes rewinding of the second hand due to transiton effect
+
 				const minutes = currentTime.getMinutes();
 				const minutesDegrees = (minutes / 60) * 360 + 90;
 				minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
